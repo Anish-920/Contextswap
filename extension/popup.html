@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ContextSwap</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <span class="logo">ContextSwap</span>
+      <button id="logoutBtn" class="linkBtn hidden">Log out</button>
+    </header>
+
+    <!-- Login view -->
+    <section id="loginView" class="view">
+      <p class="hint">Sign in to save and restore workspaces.</p>
+      <input id="loginEmail" type="email" placeholder="Email" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button id="loginBtn" class="primary">Log In</button>
+      <p class="error" id="loginError"></p>
+      <p class="hint">No account? <a href="#" id="showRegister">Register</a></p>
+    </section>
+
+    <!-- Register view -->
+    <section id="registerView" class="view hidden">
+      <input id="regName" type="text" placeholder="Name" />
+      <input id="regEmail" type="email" placeholder="Email" />
+      <input id="regPassword" type="password" placeholder="Password (min 8 chars)" />
+      <button id="registerBtn" class="primary">Create Account</button>
+      <p class="error" id="registerError"></p>
+      <p class="hint"><a href="#" id="showLogin">Back to login</a></p>
+    </section>
+
+    <!-- Main app view -->
+    <section id="mainView" class="view hidden">
+      <div class="saveRow">
+        <input id="workspaceName" type="text" placeholder="Workspace name (optional — AI will suggest one)" />
+        <button id="saveBtn" class="primary">Save Tabs</button>
+      </div>
+      <p class="status" id="saveStatus"></p>
+
+      <input id="searchInput" type="text" placeholder="Search workspaces..." />
+
+      <ul id="workspaceList" class="workspaceList"></ul>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
